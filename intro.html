@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hihi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="content">
+        <div class="content-title">
+            <h2 class="content-title_text">Chờ xíu nhaaa</h2>
+            <span class="content-title_dot sub-content ">.</span>
+            <span class="content-title_dot sub-content active">.</span>
+            <span class="content-title_dot sub-content">.</span>
+            <img src="cool.png" alt="" class="content-icon sub-content" style="width:50px">
+            <img src="cool.png" alt="" class="content-icon sub-content" style="width:50px">
+        </div>
+        <div id="container" class="container">
+            <div class="counter">
+                <span id="digit" class="digit">5</span>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    var tik = setInterval(() => {
+        var lyf = document.getElementById('digit')
+        lyf.classList.toggle("digit");
+        if (lyf.innerText == 0) {
+            document.getElementById('digit').remove();
+            var span = document.createElement("span");
+            span.classList.add('text-content')
+            span.textContent ='Géc gô ...';
+            document.getElementById('container').classList.toggle("containeroverlay")
+             document.querySelector('.counter').appendChild(span)
+            setTimeout(() =>{
+                 window.location = "page.html";
+            }, 2000)
+
+            // clearInterval(tik)
+        } else {
+            lyf.innerText -= 1
+        }
+        lyf.classList.toggle("digit");
+    }, 1000)
+</script>
+
+</html>
